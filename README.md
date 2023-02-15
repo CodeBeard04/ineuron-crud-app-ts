@@ -1,9 +1,31 @@
 # ineuron-crud-app-ts
 
-The following app is a CRUD application created using typescript and express server
+The following app is a CRUD application created using typescript and mongodb as database.
+
+User model -
+    name: {
+        type: String,
+        required: true
+    },
+    age: {
+        type: Number,
+        required: true
+    },
+    createdAt: {
+        type: Date
+    },
+    updatedAt: {
+        type: Date
+    }
 
 Following API's are created
 
+- '/users' - Gets all data from mongodb.
+- '/users/add' - Adds data to mongodb collection.
+- '/users/update/:id' - Updates record present in collection.
+= '/users/:id' - finds record present in the collection and deletes the record.
+
+Explanation -
 - /GET
 route -  '/' - responds with status 200 and String as 'Status - OK'.
   
