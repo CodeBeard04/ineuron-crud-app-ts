@@ -23,6 +23,9 @@ const options = {
         servers: [
             {
                 url: 'http://localhost:5050/'
+            },
+            {
+                url: 'http://ineuroncrudappts-env.eba-ii8mhrp8.ap-south-1.elasticbeanstalk.com/'
             }
         ]
     },
