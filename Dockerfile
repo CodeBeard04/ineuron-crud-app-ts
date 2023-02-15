@@ -1,14 +1,26 @@
-FROM node:14
+FROM node:14 as development
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY package*.json .
 
-RUN npm install 
-# RUN npm ci --only=production
+RUN npm install && npm install typescript@4.5.2 
 
 COPY . .
 
-EXPOSE 5050
+RUN npm run build
 
-CMD [ "node", "server.js" ]
+FROM node:14 as production
+
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
+
+WORKDIR /usr/src/app
+
+COPY package*.json .
+
+RUN npm ci --only=production
+
+COPY --from=development /usr/src/app/dist ./dist
+
+CMD [ "node", "dist/server.js" ]
