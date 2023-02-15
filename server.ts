@@ -8,7 +8,7 @@ import swaggerJsDoc from 'swagger-jsdoc';
 import router from './routes/Users';
 
 const app = express()
-const port = process.env.PORT || 5050
+const port = process.env.PORT || 8081
 
 app.use(cors())
 app.use(express.json());
