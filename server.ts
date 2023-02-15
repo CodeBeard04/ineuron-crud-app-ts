@@ -46,6 +46,9 @@ mongoose.connect(uri)
     console.log("Error while connecting to mongodb: ", err);
 })
 
+// Health Check
+app.get('/', (req, res) => res.status(200).json('Status - OK'))
+
 app.use( "/users", router);
 
 app.listen(port, () => {

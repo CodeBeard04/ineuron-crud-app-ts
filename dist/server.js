@@ -10,7 +10,7 @@ const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
 const Users_1 = __importDefault(require("./routes/Users"));
 const app = (0, express_1.default)();
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 5050;
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 const options = {
@@ -41,6 +41,8 @@ mongoose_1.default.connect(uri)
 }).catch((err) => {
     console.log("Error while connecting to mongodb: ", err);
 });
+// Health Check
+app.get('/', (req, res) => res.status(200).json('Status - OK'));
 app.use("/users", Users_1.default);
 app.listen(port, () => {
     console.log("app is listening on", port);
