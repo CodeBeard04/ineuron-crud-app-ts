@@ -34,11 +34,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 const uri = "mongodb+srv://test:test123@cluster0.n5zxrfk.mongodb.net/?retryWrites=true&w=majority";
 
-const connectionParams = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}
-
 mongoose.connect(uri)
 .then(() => {
     console.log("Connected to db");

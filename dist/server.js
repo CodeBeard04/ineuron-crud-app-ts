@@ -31,10 +31,6 @@ const options = {
 const swaggerSpec = (0, swagger_jsdoc_1.default)(options);
 app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerSpec));
 const uri = "mongodb+srv://test:test123@cluster0.n5zxrfk.mongodb.net/?retryWrites=true&w=majority";
-const connectionParams = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-};
 mongoose_1.default.connect(uri)
     .then(() => {
     console.log("Connected to db");

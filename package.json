@@ -2,12 +2,12 @@
   "name": "ineuron-crud-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/server.js",
   "scripts": {
     "dev": "ts-node-dev --poll server.ts",
     "start": "npm run build && node dist/server.js",
     "test": "mocha -r ts-node/register test/**/*.ts",
-    "build": "rimraf ./dist && tsc -b"
+    "build": "rimraf ./dist && tsc"
   },
   "author": "CodeBeard",
   "license": "ISC",
