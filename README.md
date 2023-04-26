@@ -1,5 +1,7 @@
 # ineuron-crud-app-ts
 
+prod - http://ineuroncrudappts-env.eba-ii8mhrp8.ap-south-1.elasticbeanstalk.com/
+
 The following app is a CRUD application created using typescript and mongodb as database.
 
 User model -
